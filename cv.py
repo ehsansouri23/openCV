@@ -20,3 +20,7 @@ cv.imshow('gray image', grayImage)
 cv.waitKey(0)
 cv.destroyAllWindows()
 
+blurImage = cv.GaussianBlur(grayImage, (9, 9), 5)
+cv.imshow('gray blur image', blurImage)
+cv.waitKey(0)
+cv.destroyAllWindows()
