@@ -1,4 +1,5 @@
 import cv2 as cv
+import matplotlib.pyplot as plt
 
 print(cv.__version__)
 
@@ -31,5 +32,11 @@ image = cv.imread('test.jpg')
 height, width = image.shape[:2]
 resizedImage = cv.resize(image, (width / 2, height), interpolation=cv.INTER_CUBIC)
 cv.imshow('resized image', resizedImage)
+cv.waitKey(0)
+cv.destroyAllWindows()
+
+# detecting edges of image
+edges = cv.Canny(image, 100, 200)
+cv.imshow('edges of image', edges)
 cv.waitKey(0)
 cv.destroyAllWindows()
